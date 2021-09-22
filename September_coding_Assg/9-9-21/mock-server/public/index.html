@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Road to backend</h1>
+</body>
+</html>
+<script>
+// GET REQUEST
+// async function data(){
+//     let res = await fetch("http://localhost:1000/api/products");
+//     let data = await res.json();
+//     console.log(data);
+// }
+// data();
+
+//ADDING DATA : POST REQUEST
+async function adddata(){
+    let res = await fetch(`http://localhost:1000/api/products`,{
+    method : "POST",
+
+    body: {
+        "id": 55,
+        "name": "kapil",
+        "age": 23,
+        "city":"chandrapur"
+       },
+    }
+    );
+    let data = await res.json();
+    console.log(data); 
+}
+adddata();
+
+
+</script>

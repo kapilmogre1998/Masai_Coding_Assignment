@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="./page2.css">
+</head>
+
+<body>
+
+    <div id="nvbr"></div>
+
+    <hr>
+    <h2>Latest Receipe of the day</h2>
+    <hr>
+
+    <div id="receipeoftheday"></div>
+</body>
+
+<script type="module">
+
+    import navbar from "../components/navbar.js";
+    let addnvbr = document.getElementById("nvbr");
+    addnvbr.innerHTML = navbar();
+
+</script>
+<script>
+
+    var adddata = document.getElementById("receipeoftheday");
+    async function main() {
+        let res = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=chicken`);
+        let data = await res.json();
+        let getData = data.meals;
+        getData.forEach(({ strMealThumb, strMeal, strInstructions }) => {
+            let div = document.createElement("div");
+            let meal = document.createElement("h3");
+            let instruction = document.createElement("p");
+            let image = document.createElement("img");
+            meal.innerHTML = strMeal;
+            instruction.innerHTML = strInstructions;
+            image.src = strMealThumb;
+            image.style.margin = "50px";
+            image.style.boxShadow = "10px black";
+            div.append(image, meal, instruction);
+            adddata.append(div);
+            console.log(getData);
+
+        })
+
+    }
+
+    main() // function call
+
+</script>
+
+</html>

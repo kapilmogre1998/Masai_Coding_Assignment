@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+        }
+        body{
+            background-image: url("https://c.tenor.com/fRhOTAmiMqsAAAAM/love-you-more-than-the-universe-excited.gif");
+            background-size: 100%;
+            background-repeat: no-repeat;
+        }
+        #container {
+            width: 50%;
+            margin: 250px auto;
+            text-align: center;
+            padding: 10px;
+        }
+
+        img {
+            border: 1px solid black;
+            width: 40%;
+            background: black;
+        }
+
+        #inp {
+            margin: auto;
+            width: 68%;
+            background: #2d2f30;
+            border-radius: 20px;
+        }
+
+        #addstyle {
+            border-bottom-right-radius: 0px;
+            border-bottom-left-radius: 0px;
+        }
+
+        #star {
+            width: 85%;
+            height: 40px;
+            background: #2d2f30;
+            border: none;
+            outline: none;
+            color: white;
+            font-size: 15px;
+        }
+
+        #hr {
+            width: 90%;
+            margin: 0px auto;
+            display:none;
+        }
+
+        #data {
+            height: 200px;
+            width: 68%;
+            border-top: none;
+            overflow: auto;
+            margin: auto;
+            border: none;
+            background: #2d2f30;
+            border-bottom-right-radius: 20px;
+            border-bottom-left-radius: 20px;
+            display:none;
+        }
+
+        #data div {
+            color: white;
+            margin: 40px;
+            margin-top: 20px;
+            text-align: initial;
+            background: #2d2f30;
+        }
+
+        #data div p {
+            background: #2d2f30;
+            margin-top: 3px;
+        }
+
+        #showdata {
+            width: 700px;
+            margin: 15% auto;
+            display: flex;
+            flex-direction: column;
+            color: yellow;
+            text-align: center;
+        }
+
+        #showdata>div {
+            display: flex;
+        }
+
+        .showinfo {
+            width: 300px;
+            height: 200px;
+            border: 1px solid yellow;
+            border-radius: 20px;
+            margin: auto;
+        }
+
+        #btn {
+            color: yellow;
+            background-color: transparent;
+            text-align: center;
+            width: 150px;
+            margin: 50px auto;
+            border: 1px solid yellow;
+            padding: 15px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="container">
+        <div id="inp"><input type="text" id="star" placeholder="Search characters" oninput="throttling(main,1000)" />
+            <hr id="hr">
+            </hr>
+        </div>
+
+        <div id="data">
+        </div>
+    </div>
+
+    <div id="showdata" style="display:none">
+        <h2 id="head"></h2>
+        <div>
+            <div class="showinfo" id="personal"></div>
+            <div class="showinfo" id="anatomy"></div>
+        </div>
+        <div> <button id="btn">Go Back</button></div>
+    </div>
+
+    <script>
+        var timeId;
+        var getdata = document.getElementById("data");
+
+        async function main1(n) {
+            let res = await fetch(`https://swapi.dev/api/people/?search=${n}`);
+            let data = await res.json();
+            return data.results;
+        }
+
+        async function main() {
+            let name = document.getElementById("star").value;
+            let data = await main1(name);
+            console.log(data);
+            appenddata(data);
+        }
+
+        function appenddata(d) {
+            var getdata = document.getElementById("data");
+            //Making getdata div visible
+            getdata.style.display = "block";
+
+            //Making input div border-radius-bottom 0px;
+            let inpstyle = document.getElementById("inp");
+            inpstyle.style.borderBottomRightRadius = "0px";
+            inpstyle.style.borderBottomLeftRadius = "0px";
+
+            //visible horizontal line
+            document.getElementById("hr").style.display = "block";
+
+            //appending data
+            d.forEach(({ name, birth_year, height, gender, eye_color, mass, hair_color }) => {
+                var nme = document.createElement("div");
+                nme.onmouseover = () => {
+                    nme.style.color = "yellow";
+                }
+                nme.onmouseout = () => {
+                    nme.style.color = "white";
+                }
+                var brth = document.createElement("p");
+                nme.innerHTML = name;
+                brth.innerHTML = birth_year;
+                brth.style.color = "white";
+                nme.append(brth);
+                getdata.append(nme);
+                console.log(name, birth_year, gender);
+                //new div after clicking 
+                let showdt = document.getElementById("showdata");
+                let dt = document.getElementById("data");
+                let conta = document.getElementById("container");
+                dt.onclick = function () {
+                    conta.style.display = "none";
+                    document.getElementById("showdata").style.display = "block";
+
+
+                    document.getElementById("head").textContent = `${name}`;
+                    //appending data in personalinfo 
+                    let personal = document.getElementById("personal");
+                    // let nme = document.createElement("h1");
+                    //   nme.innerHTML = name;
+
+                    let personalhead = document.createElement("h2");
+                    personalhead.innerHTML = `Personal Info`;
+                    let birth = document.createElement("h4");
+                    birth.innerHTML = `Birth: ${birth_year}`;
+                    let gend = document.createElement("h4");
+                    gend.innerHTML = `Gender: ${gender}`;
+                    let hght = document.createElement("h4");
+                    hght.innerHTML = `Height: ${height}`;;
+                    //appending data 
+                    personal.append(personalhead, birth, gend, hght);
+
+                    //appending data in personalinfo 
+                    let anatomy = document.getElementById("anatomy");
+                    let anatomyhead = document.createElement("h2");
+                    anatomyhead.innerHTML = `Anatomy`;
+                    let eye = document.createElement("h4");
+                    eye.innerHTML = `Eye color: ${eye_color}`;
+                    let hair = document.createElement("h4");
+                    hair.innerHTML = `Hair color: ${hair_color}`;
+                    let mss = document.createElement("h4");
+                    mss.innerHTML = `Mass: ${mass}`;
+                    //appending data 
+                    anatomy.append(anatomyhead, eye, mss, hair);
+
+
+                    //hover Effect
+                    personal.onmouseover = function () {
+                        personal.style.color = "white";
+                        personal.style.borderColor = "white";
+                    }
+                    personal.onmouseout = function () {
+                        personal.style.color = "yellow";
+                        personal.style.borderColor = "yellow";
+                    }
+
+                    anatomy.onmouseover = function () {
+                        anatomy.style.color = "white";
+                        anatomy.style.borderColor = "white";
+                    }
+                    anatomy.onmouseout = function () {
+                        anatomy.style.color = "yellow";
+                        anatomy.style.borderColor = "yellow";
+                    }
+
+                    let btn = document.getElementById("btn");
+                    btn.onmouseover = function () {
+                        btn.style.color = "white";
+                        btn.style.borderColor = "white";
+                    }
+                    btn.onmouseout = function () {
+                        btn.style.color = "yellow";
+                        btn.style.borderColor = "yellow";
+                    }
+
+
+                }
+            });
+            
+
+        }
+
+        //Go back button
+        let btn = document.getElementById("btn");
+        btn.onclick = function () {
+            document.getElementById("personal").textContent = "";
+            document.getElementById("anatomy").textContent = "";
+            document.getElementById("head").textContent = "";
+            document.getElementById("showdata").style.display = "none"; document.getElementById("container").style.display = "block";
+            document.getElementById("star").value = "";
+            document.getElementById("data").style.display = "none";
+            let inpstyle = document.getElementById("inp");
+            inpstyle.style.borderBottomRightRadius = "20px";
+            inpstyle.style.borderBottomLeftRadius = "20px";
+            document.getElementById("hr").style.display = "none";
+
+        }
+
+
+        function throttling(func, delay) {
+            getdata.innerHTML = "";
+            var name = document.getElementById("star");
+
+            if (name.length < 3)
+                return false;
+
+            if (timeId)
+                clearTimeout(timeId);
+
+            timeId = setTimeout(function () {
+                func();
+            }, delay);
+        }
+    </script>
+</body>
+
+</html>

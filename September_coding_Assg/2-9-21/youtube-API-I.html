@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #head {
+            margin: 1%;
+            margin-bottom: 3%;
+            display: flex;
+            padding-left: 20px;
+        }
+
+        .backgrd {
+            margin-top: 5px;
+            background-repeat: no-repeat;
+            /*   border:1px solid black; */
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+
+        #youtubelogo {
+            background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaVWi1c5qQxl9dq2VQ4Fcs3ZmcJKcRXbsxnQ&usqp=CAU");
+            /*   border:1px solid black; */
+            width: 100px;
+            height: 27px;
+            background-size: 100px;
+        }
+
+        #dash {
+            background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARMAAAC3CAMAAAAGjUrGAAAAMFBMVEX///8AAADl5eX09PTV1dUICAiurq5TU1Orq6tJSUnc3Nzt7e1ERET6+vpRUVG9vb0gCS9GAAAA8ElEQVR4nO3dOQ4CQRAEQZblPv//W2yUFsLoNSKekGb1SLPbAQAAAAAAAAAAAADfbodh9+kC9ViGXaYL1Hm6yWm6QGlSmpQmpUlpUpqUJqVJaVKalCalSWlSmpQmpUlpUpqUJnWdbrLBjXqd9pwuAAAAAMCvzstx1Ba3x9f09rjBJjbq0qQ0KU1Kk9KkNClNSpPSpDQpTUqT0qQ0KU1Kk9KkNClvQet9mnW5TRcAAAAAgP/d98PW6QJljy27fWlSmpQmpUlpUpqUJqVJaVKalCalSWlSmpQmpUlpUpqUJuWPs3LLAAAAAAAAAAAAAGAbPhzZL1DD5UvKAAAAAElFTkSuQmCC");
+            background-position-y: -0.2em;
+            width: 50px;
+            height: 27px;
+            background-size: 50px;
+        }
+
+        #search {
+            margin-left: 200px;
+        }
+
+        #videoName {
+            height: 35px;
+            width: 500px;
+            font-size: 15px;
+            padding: 0px 10px;
+        }
+
+        .backg {
+            background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTjtA8CqZMqf2l1KU0-A1iEc1-DSgnMNGKCQ&usqp=CAU");
+            background-size: 50px;
+            width: 50px;
+            background-position-y: 4.5px;
+            background-position-x: 10px;
+            border: none;
+            height: 35px;
+            background-repeat: no-repeat;
+            margin-right: 5px;
+        }
+
+        #searchbtn {
+            background-position-x: 0px;
+            height: 39px;
+            margin: 0px;
+            border: 1px solid gray;
+        }
+
+        #mic {
+            background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoSJxhGdEMrXx2PF-i75_1EzAcz5RHSjEXmg&usqp=CAU");
+            background-size: 55px;
+            width: 50px;
+            background-position-x: 1em;
+            margin-left: 5px;
+            border: none;
+            margin-right: 100px;
+        }
+
+        #video {
+            background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTD67ZZoEibLsolLxohdL28IsIF0yutuPvt6g&usqp=CAU");
+            background-size: 40px;
+            background-position-y: 5px;
+            background-position-x: 5px;
+        }
+
+        #moreapp {
+            background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcOzxlwmMSpXavkvyb8Zj6sq205JhJR2FCPw&usqp=CAU");
+            background-size: 40px;
+            background-position-x: 0.3em;
+            background-position-y: 7px;
+        }
+
+        #bell {
+            background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgX4YM6EZRH7JBqqG-X4FRi8LuMoE4h0FYNg&usqp=CAU");
+            background-size: 35px;
+            background-position-x: 1;
+            background-position-y: 0em;
+        }
+
+        #gmail {
+            background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSjUR8wRN5XZD6uHYXfyFvsjJsixvLnpkqpA&usqp=CAU);
+            background-size: 30px;
+            background-position-y: 0em;
+        }
+
+        #videodiv {
+            display: grid;
+            grid-template-columns: 20% 20% 20% 20%;
+            grid-gap: 6%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="head">
+        <div id="dash" class="backgrd"></div>
+        <div id="youtubelogo" class="backgrd"></div>
+        <div id="search"><input type="text" id="videoName" placeholder="Search" /></div>
+        <button id="searchbtn" onclick="call()" class="backg"></button>
+        <button id="mic" class="backg"></button>
+        <button id="video" class="backg"></button>
+        <button id="moreapp" class="backg"></button>
+        <button id="bell" class="backg"></button>
+        <button id="gmail" class="backg"></button>
+    </div>
+    <div id="videodiv"></div>
+
+
+
+    <script>
+        async function call() {
+            let videoname = document.getElementById("videoName").value;
+
+            let res = await fetch(`https://youtube.googleapis.com/youtube/v3/search?q=${videoname}&type=videoId&key=AIzaSyAe_JAfNDIVv7b7UbEIB8T32646X2yc9WQ&maxResults=20`);
+            let data = await res.json();
+
+            console.log(data);
+            videodiv.innerHTML = "";
+            for ({ id: { videoId }, } of data.items) {
+                var video_frame = document.createElement("iframe");
+                video_frame.src = `https://www.youtube.com/embed/${videoId}`;
+                let videodiv = document.getElementById("videodiv");
+                videodiv.append(video_frame);
+            }
+
+
+        }
+    </script>
+</body>
+
+</html>

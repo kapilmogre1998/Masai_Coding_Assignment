@@ -1,0 +1,18 @@
+db.createCollection("") //Inside quotation write the name of Database
+show dbs // It will show all the Database
+use _Database Name_ 
+
+db.users.insert({})   //used for creating single document
+db.users.insertMany({})  //used for creating multiple documents
+
+db.users.find()  // It will show all the documents inside the collection
+db.users.find({}) //  It will show the particuler document 
+
+db.users.update({} , {$set{}})  // It will update(append/add) the particular document 
+db.users.updateMany({}, $set{})  // It will update all the document that matches
+
+db.users.remove({})  // It will remove the particuler document
+db.users.deleteOne({})  //It will delete the only one particular document
+db.users.deletMany({})  //It will delete the documents that matches
+
+db.dropDatabase();  //It will delete the Database

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #head {
+            padding: 10px;
+            background-color: red;
+
+        }
+
+        #search {
+            display: flex;
+            width: 50%;
+            margin: auto;
+        }
+
+        input {
+            margin: 0px 5px;
+            width: 300px;
+            border-radius: 5px;
+            border: none;
+            height: 20px;
+            padding: 8px;
+            outline: none;
+        }
+
+        button {
+            border-radius: 5px;
+            border: none;
+            width: 80px;
+            background-color: black;
+            color: white;
+            word-wrap: break-word;
+        }
+
+        #getdata {
+            background-color: #888888;
+            color: white;
+            padding: 10px;
+            font-size: 15px;
+        }
+
+        img {
+            width: 20%;
+            box-shadow: 7px 8px black;
+        }
+
+        .border {
+            background-color: black;
+            height: 10px;
+            margin-top: 20px;
+            margin-bottom: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="head">
+        <div id=search>
+            <input id="movie" placeholder="Search Movie" />
+            <button onclick=make()>Submit</button>
+        </div>
+    </div>
+    <div class="border" id="border1" style="display:none"></div>
+    <div id="getdata" style="display:none">
+    </div>
+    <div class="border" id="border2" style="display:none"></div>
+
+
+    <script>
+        async function make() {
+            try {
+                let movie = document.getElementById("movie").value;
+                let res = await fetch(`https://www.omdbapi.com/?s=${movie}&apikey=37a3390e`); //37a3390e
+                let data = await res.json();
+                moviedata(data.Search); //function call
+            }
+            catch (err) {
+                let getdata = document.getElementById("getdata");
+                getdata.textContent = "";
+                let poster = document.createElement("img");
+                poster.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZ1FpsUFz3wXjiGxeF1e3fDj7ItjVOTDm-EA&usqp=CAU";
+                getdata.append(poster);
+            }
+        }
+        function moviedata(data) {
+            let getdata = document.getElementById("getdata");
+            getdata.textContent = "";
+            getdata.style.display = "block";
+            document.getElementById("border1").style.display = "block";
+            document.getElementById("border2").style.display = "block";
+            console.log(data.length);
+
+            data.forEach(function (p) {
+                //Creating Element
+                let div = document.createElement("div");
+                let title = document.createElement("h3");
+                let Year = document.createElement("p");
+                let rating = document.createElement("p");
+                let poster = document.createElement("img");
+                //Enter content
+                title.innerHTML = "Title:" + p["Title"];
+                Year.innerHTML = "Year:" + p["Year"];
+                rating.innerHTML = "Rating:" + p["imdbID"];
+                poster.src = p["Poster"];
+                //Append
+                div.append(poster, title, Year, rating);
+                getdata.append(div);
+                console.log(title);
+            });
+        }
+    </script>
+</body>
+
+</html>

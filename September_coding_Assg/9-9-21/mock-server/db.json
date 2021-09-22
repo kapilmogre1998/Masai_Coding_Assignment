@@ -1,0 +1,56 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "age": "1089890"
+    },
+    {
+      "id": 2,
+      "active": false
+    },
+    {
+      "id": 3,
+      "name": "Bob Taylor",
+      "age": 45,
+      "active": false
+    },
+    {
+      "id": 4,
+      "name": "Dhoni",
+      "age": 40,
+      "active": false,
+      "city": "ranchi"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Pizza",
+      "price": 10,
+      "active": true
+    },
+    {
+      "id": 2,
+      "price": 1000,
+      "name": "fuse"
+    },
+    {
+      "id": 3,
+      "name": "Ice Cream",
+      "age": 2.5,
+      "active": false
+    },
+    {
+      "id": 4,
+      "name": "Chocolate",
+      "price": 6,
+      "active": true
+    },
+    {
+      "id": 100,
+      "name": "kit kat",
+      "price": 6,
+      "active": true
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+body{
+    background-image: url("Images/image.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0px;
+}
+#container {
+    overflow:hidden;
+}
+
+#navbar {
+    background-color: burlywood;
+   
+    text-align: center;
+    max-height: 100px;
+    width: 100%;
+}
+
+#navbar a {
+    margin: 20px;
+    line-height: 50px;
+}
+
+
+#container {
+    width: 100%;
+    height: 500px;
+    background-image: url("Images/image.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#navbar {
+    background-color: burlywood;
+    line-height: 50px;
+    text-align: center;
+    margin: 0px;
+}
+
+#navbar a {
+    margin: 20px;
+}
+
+a:active{
+    color:white
+}
+
+input {
+    width: 300px;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    padding: 0px 10px;
+    background-color: rgb(153, 123, 84);
+    color: white;
+    outline: none;
+}
+
+::placeholder {
+    color: white;
+}
+
+
+        input {
+            width: 280px;
+            height: 40px;
+            border-radius: 5px;
+            border: none;
+            padding: 0px 10px;
+            background-color: rgb(51, 45, 38);
+            color: white;
+            outline: none;
+        }
+
+        ::placeholder {
+            color: white;
+        }
+        #box{
+            width: 300px;
+            height: 300px;
+           
+            margin-left: 38%;
+        }
+        #recommed{
+            border: 1px solid white;
+            height: 150px;
+            width:298px;
+            color: black;
+            margin-left: 38%;
+            margin-top: 1px;
+            border-radius: 5px;
+            background-color: white;
+            text-align:justify;
+            visibility: hidden;
+            overflow-y: scroll;
+            margin-top: -8px;
+            /* display: none; */
+        }
+        #recommed p{
+            margin: 0px;
+            font-size: 14px;
+            padding: 14px;
+        }
+        #searchdata{
+            overflow:hidden;
+            margin-top: 5%;
+            height: 200px;
+            display: flex;
+            padding: 20px;
+            color: azure;
+            visibility: hidden;
+            border: 1px solid white;   
+        }
+        #searchdata img{
+            padding: 10px;
+            width: 200px;
+        }
+        #searchdata div{
+            overflow-y:scroll;
+            padding: 10px 40px;    
+          
+        }
+         #searchdata div h3{
+             margin-top: 0px;
+         }

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="./page1.css">
+</head>
+
+
+<body>
+    <div id="nvbr"></div>
+    <div id="recommed" ></div>
+    <div id="searchdata"></div>
+    
+</body>
+
+
+
+
+
+<script type="module">
+
+   import navbar from "../components/navbar.js";
+   
+   document.getElementById("nvbr").innerHTML = navbar();  
+</script>
+
+
+<script>
+
+    var timerid;
+        var div = document.getElementById("recommend");
+
+       
+
+        async function collect(food) {
+            let res = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${food}`);
+            let data = await res.json();
+            return data.meals;
+        }
+
+        
+        let recommed = document.getElementById("recommed");
+        let searchdata = document.getElementById("searchdata");
+
+        async function main(foodname) {
+            let searchfood = document.getElementById("input").value;
+            // console.log(searchfood);
+           
+             if(searchfood.length === 0 || searchfood.length === 1){
+                recommed.style.visibility = "hidden";
+                return false;
+            }
+            else{
+                recommed.style.visibility = "visible";
+                recommed.innerHTML = "";
+                searchdata.style.visibility = "visible";
+            }
+
+            let data = await collect(foodname);
+           
+
+            data.forEach(({strMeal,strMealThumb,strInstructions})=>{
+                let item = document.createElement("p");
+                item.textContent = strMeal;
+                recommed.append(item);
+                item.onmouseover = function () {
+                    item.style.background = "grey";
+                }
+                item.onmouseout = () =>{
+                    item.style.background = "white"
+                }
+                
+                item.onclick = () =>{
+                    searchdata.innerHTML = "";
+                    let name = document.createElement("h3");
+                    name.innerHTML = strMeal;
+                    let image = document.createElement("img");
+                    image.src = strMealThumb;
+                    let instr = document.createElement("p");
+                    instr.innerHTML = strInstructions;
+                    let showinst = document.createElement("div");
+                    showinst.append(name,instr);
+                    searchdata.append(image,showinst);
+                }
+            })
+        }
+
+        function debouncing(funct, delay) {
+            
+            let timer;
+            let searchfood = document.getElementById("input").value;
+            //console.log(searchfood); 
+            if (searchfood.length < 3){
+                return false;
+            }
+                
+            if (timerid)
+                clearTimeout(timerid);
+
+            timerid = setTimeout(function () {
+                funct(searchfood);
+            }, delay);
+        } 
+</script>
+</html>
