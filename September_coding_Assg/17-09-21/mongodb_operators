@@ -1,0 +1,14 @@
+1) db.user.find({movie_name : {$eq : "spider-man"}})
+2) db.user.find({movie_name : {$ne : "spider-man"}})
+3) db.user.find({budget : {$gt : 10000}})
+   db.user.find({budget : {$gte : 10000}})
+4) db.user.find({budget : {$lt : 10000}})
+   db.user.find({budget : {$lte : 10000}})
+5) db.users.find ({$and : [{produce : {$gt: 2000}} , {budget : {$gt: 10000}}]}) 
+6) db.users.find ({$or : [{produce : {$gt: 2000}} , {budget : {$gt: 10000}}]}) 
+7) db.users.find ({$and : [{produce : {$gt: 2000}} , {budget : {$gt: 10000}}]}) 
+8) db.users.find ({$nor : [{produce : {$gt: 2000}} , {budget : {$gt: 10000}}]}) 
+9) db.users.find ({$or : [{$not : {produce : {$gt: 2000}}} , {$not :{budget : {$gt: 10000}}}]}) 
+10) db.users.find ({$and : [{produce : {$gt: 2000}} , {produce : {$gt: 2010}}]}) 
+11) db.article.aggregate([{ $skip : 10 }]);
+
