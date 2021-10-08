@@ -10,7 +10,3 @@ app.use(express.urlencoded({extended:false}))
 
 const userscontroller = require("./controller/user.controller");
 app.use("",userscontroller);
-
-
-
-
