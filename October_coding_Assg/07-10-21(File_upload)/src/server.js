@@ -1,9 +1,6 @@
 const express = require("express");
 
-// const app = require("./index");
-
 const connect = require("./config/dbs");
-
 
 const app = express();
 
