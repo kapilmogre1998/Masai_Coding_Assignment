@@ -1,12 +1,12 @@
 function authorize(permissionRoles) {
     return (req, res, next) => {
         
-        // check if at least one role of that user matches with permissionRoles
-        let allowed = true
-        // console.log("authorize",req.user)
+        // check if seller and admin role of that user matches with permissionRoles
+        let allowed = true;
+        //console.log("authorize",req.user)
         // req.user.role.map(role => {
             
-        //     if(permissionRoles.includes(role)) {
+        //     if(permissionRoles.includes(role)&&permissionRoles.includes(role)) {
         //        continue;
         //     }
         //     else
@@ -15,7 +15,7 @@ function authorize(permissionRoles) {
         let roles = req.user.role,flag = 0;
         for(let i=0;i<permissionRoles.length;i++){
             flag = 0;
-            console.log(permissionRoles[i])
+            //console.log(permissionRoles[i])
             for(let j=0;j<roles.length;j++){
                 if(permissionRoles[i] === roles[j]){
                     flag = 1;

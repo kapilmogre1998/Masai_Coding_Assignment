@@ -28,7 +28,7 @@ const register = async(req,res)=>{
         res.status(200).send({user,token})
 
     }catch(err){
-        res.status(500).send({message:"sorry for inconvience please try agai later"})
+        res.status(500).send({message:"sorry for inconvience please try again later"})
     }
 }
 

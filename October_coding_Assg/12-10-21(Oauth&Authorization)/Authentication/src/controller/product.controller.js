@@ -7,11 +7,13 @@ const Product = require("../model/product.model")
 const authenticate = require('../middleware/authenticate')
 const authorize = require('../middleware/authorize')
 
-// router.get("/new", function(req, res) {
-//     return res.render("products/new")
-// })
+router.post("", async function(req, res) {
+    const product = await Product.create(req.body);
 
-router.get("/", authenticate, authorize(["seller", "admin"]), async function(req, res) {
+    return res.status(200).send(product);
+})
+
+router.get("", authenticate, authorize(["seller", "admin"]), async function(req, res) {
     const products = await Product.find().lean().exec();
     const user = req.user;
 
@@ -19,7 +21,7 @@ router.get("/", authenticate, authorize(["seller", "admin"]), async function(req
     return res.send({products, user})
 })
 
-router.patch("/update/:id", authenticate,authorize(["seller", "admin"]), async function(req, res) {
+router.patch("/update/:id",authenticate,authorize(["seller", "admin"]), async function(req, res) {
     const products = await Product.findByIdAndUpdate(req.params.id,req.body, {new:true}).lean().exec();
     const user = req.user;
 

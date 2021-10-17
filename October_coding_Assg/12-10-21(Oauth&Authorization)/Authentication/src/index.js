@@ -2,13 +2,14 @@ const express = require('express');
 
 const passport = require("./config/passport")
 
-const {register, login} = require("./controller/auth.controller")
-const productController = require("./controller/product.controller")
-
 const app = express();
 
 app.use(express.json());
 app.use(passport.initialize());
+
+const {register, login} = require("./controller/auth.controller")
+const productController = require("./controller/product.controller")
+
 
 passport.serializeUser(function({user, token}, done) {
     done(null, {user, token});
