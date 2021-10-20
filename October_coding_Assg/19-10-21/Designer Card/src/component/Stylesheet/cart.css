@@ -1,0 +1,31 @@
+
+#cart{
+    width: 75%;
+    background-color: white;
+    border-radius: 30px;
+}
+#cart img{
+    width: 100%;
+}
+#cart > div{
+    padding: 20px;
+    padding-left:20px;
+}
+#cart>div>p>span{
+    margin-right: 22px;
+    font-size: 14px;
+    color: rgb(134, 131, 134);
+    font-weight:500;
+}
+#cart>div button{
+    margin-left: 10px;
+}
+ #price>span:nth-child(2){
+    margin-left: -16px;
+    color: red;
+    text-decoration: line-through;
+}
+ #price>span:nth-child(1){
+    font-size: 22px;
+    color: black;
+}

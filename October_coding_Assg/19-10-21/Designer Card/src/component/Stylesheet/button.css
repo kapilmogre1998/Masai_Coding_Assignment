@@ -1,0 +1,10 @@
+#custonButton{
+    background-color: #00e676;
+    border: none;
+    padding: 8px;
+    letter-spacing: 3px;
+    color: white;
+    border-radius: 5px;
+    width: 100px;
+    font-weight: 600;
+}
