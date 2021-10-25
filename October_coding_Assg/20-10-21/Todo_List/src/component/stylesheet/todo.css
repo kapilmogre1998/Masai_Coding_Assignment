@@ -1,8 +1,4 @@
 #main-div{
-    width: 60%;
-    margin: auto;
-    
-
 }
 #main-div figcaption{
     font-size: 35px;
@@ -95,9 +91,7 @@
 }
 
 #show-completed-Task{
-    margin-left: -0px;
-    margin-top: -00px;
-   
-    border: 1px solid salmon;
+    width: 30%;
+    margin:5px;
     text-align: left;
 }

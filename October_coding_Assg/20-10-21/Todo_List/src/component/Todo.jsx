@@ -6,6 +6,7 @@ import { nanoid } from 'nanoid'
 import { BiTrash } from "react-icons/bi";
 import { TiTick } from "react-icons/ti";
 
+//Get todo data from localstorage
 const getLocalStData = () => {
     let list = JSON.parse(localStorage.getItem(('lists')));
 
@@ -15,18 +16,32 @@ const getLocalStData = () => {
         return [];
 }
 
+//Get taskcompleted data from localstorage
+const getTaskCompData = () => {
+    let todoList = JSON.parse(localStorage.getItem(('taskCompleted')));
+
+    if (todoList)
+        return JSON.parse(localStorage.getItem('taskCompleted'))
+    else
+        return [];
+}
+
 export const Todo = () => {
     let [text, settext] = useState('');
     let [todo, settodo] = useState(getLocalStData());
-    let [taskCompleted, settaskCompleted] = useState([])
-
-    //Get data from localstorage
+    let [taskCompleted, settaskCompleted] = useState(getTaskCompData())
 
 
-    //Add data to localStorage
+    //Add todo data to localStorage
     useEffect(() => {
         localStorage.setItem('lists', JSON.stringify(todo))
     }, [todo])
+
+    //Add taskcompleted data to localStorage
+    useEffect(() => {
+        localStorage.setItem('taskCompleted', JSON.stringify(taskCompleted))
+    }, [taskCompleted])
+
 
     const addItem = () => {
         if (text.length === 0)
@@ -42,15 +57,15 @@ export const Todo = () => {
 
     const compeletedItem = (item) => {
         settaskCompleted([...todo])
-        //add completed task in settakcompleted
-        let completed = todo.filter(e => { if (item.id === e.id) return e })
-        //add not completed task in settodo
+        //add completed task in settaskcompleted
+        let completed = todo.filter(e => { if (item.id === e.id){item.status =!item.status; return e }})
+        //add remainign task inside todo
         let notCompleted = todo.filter(e => { if (item.id !== e.id) return e })
         
-        settaskCompleted( completed)
+        settaskCompleted([...taskCompleted,...completed])
         settodo(notCompleted)
         console.log("comp", taskCompleted)
-        console.log("todo", todo)
+        //console.log("todo", todo)
     }
 
     const deleteItem = (id) => {
@@ -63,6 +78,7 @@ export const Todo = () => {
 
     const clearAllData = () => {
         settodo([])
+        settaskCompleted([])
     }
 
     return (
@@ -89,12 +105,13 @@ export const Todo = () => {
                     <button id="clear-task" className="btn btn-success" onClick={clearAllData}>Clear All</button>
                 </div>
             </div>
-            <div id="show-completed-Task">
-                    <h3> Completed Task</h3>
+             <div id="show-completed-Task">
+                 {/* use of this div to add completed tasks */}
+                    { <h3>Task Completed</h3> }
                     {
-                        taskCompleted.map(e => <li>{e.title}</li> )
+                        taskCompleted.map(e => <li style={{ textDecorationLine: 'line-through', padding:"5px"}}>{e.title}</li> )
                     }
-                </div>
+                </div> 
         </>
     )
 }
