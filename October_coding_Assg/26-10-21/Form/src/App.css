@@ -1,14 +1,10 @@
-.main-div{
-  width: 900px;
-  margin:20px auto;
-  background-color: orange;
-  padding: 20px;
-  
-}
+/* button{
+  background-color: aqua;
+  border: 1px solid black;
+  margin: 5px;
+  padding: 5px;
+} */
 
-#div2{
-  background-color: rgb(248, 237, 237);
-}
 .App {
   text-align: center;
 }
