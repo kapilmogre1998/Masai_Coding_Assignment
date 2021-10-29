@@ -23,7 +23,8 @@ export const Form = () => {
         })
     }
 
-    const getData = async () => {
+    const getData = async() => {
+        //console.log("hi")
         const data = await fetch(" http://localhost:4000/form");
         const res = await data.json();
         setForm(res)
@@ -31,13 +32,13 @@ export const Form = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log(name);
+        //console.log(name);
         fetch(" http://localhost:4000/form", {
             method: "POST",
             body: JSON.stringify(data),
             headers: { "content-Type": "application/json" }
         })
-        getData(" http://localhost:4000/form")
+        getData()   
     }
 
     const handleDepartment = async (e) => {
