@@ -1,0 +1,5 @@
+#show-data{
+    max-width: 500px;
+    border: 2px solid black;
+    overflow:scroll
+}
