@@ -1,0 +1,17 @@
+.navDiv{
+    background-color: rgb(87, 231, 188);
+    padding: 10px;
+}
+.CustomList{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    list-style-type: none;
+}
+.CustomList li{
+    margin-right: 30px;
+}
+.CustomList li:first-child{
+    
+    margin-right: auto;
+}

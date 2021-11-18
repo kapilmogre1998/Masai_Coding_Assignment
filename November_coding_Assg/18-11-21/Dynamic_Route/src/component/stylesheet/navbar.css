@@ -1,0 +1,27 @@
+.mainDiv{
+   background-color: black;
+   padding: 10px;
+}
+.navList{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    color: wheat;
+}
+.navItem{
+    margin-right: 4rem;
+    list-style-type: none;
+}
+.navItem:first-child{
+  
+   margin-right: auto;
+}
+.navItem a{
+    text-decoration: none;
+}
+.navItem a:hover{
+    color: white;
+}
+.react{
+    padding-top: 5px;
+}   

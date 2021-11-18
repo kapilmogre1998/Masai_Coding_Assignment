@@ -1,0 +1,8 @@
+.navbar{
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(43, 226, 125);
+}
+.navbar > NavLink{
+    color: black;
+}
