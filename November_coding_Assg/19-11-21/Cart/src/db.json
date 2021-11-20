@@ -1,0 +1,23 @@
+{
+    "Product" : [
+      {
+        "id": 1,
+        "product_name": "Turkey - Breast, Double",
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvCVJ5Y_EaC0w0qRCFvCz1WnumagMoHhPLKg&usqp=CAU",
+        "description": "dictumst etiam faucibus cursus urna ut tellus nulla ut erat id mauris vulputate elementum nullam varius nulla",
+        "price": 987 
+      }, {
+        "id": 2,
+        "product_name": "Bread - Burger",
+        "image_url": "https://www.vegrecipesofindia.com/wp-content/uploads/2018/12/veg-burger-recipe-1.jpg",
+        "description": "felis ut at dolor quis odio consequat varius integer ac leo pellentesque ultrices mattis odio donec vitae nisi nam ultrices",
+        "price": 763
+      }, {
+        "id": 3,
+        "product_name": "Beans - Kidney White",
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpTwBfN7wHAWtPlbhqaLvxJyGRreruZADoTg&usqp=CAU",
+        "description": "posuere cubilia curae donec pharetra magna vestibulum aliquet ultrices erat tortor sollicitudin mi sit amet lobortis sapien sapien non mi",
+        "price": 231
+      }
+    ]
+}
