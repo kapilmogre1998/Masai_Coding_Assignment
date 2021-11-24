@@ -1,0 +1,12 @@
+body{
+    background-color: antiquewhite;
+}
+.restaurant {
+    width: 70%;
+    margin: auto;
+}
+
+.restaurant> input{
+    padding: 5px;
+    width: 97%;
+}
