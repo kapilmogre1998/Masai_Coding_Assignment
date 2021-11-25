@@ -1,0 +1,7 @@
+.parent {
+    display: grid;
+    margin-top: 1em;
+    /* repeat(number of columns/rows, the column width we want); */
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 1em;
+}

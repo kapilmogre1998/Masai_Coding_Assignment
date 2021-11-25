@@ -1,0 +1,29 @@
+{
+    "men" : [
+        {
+            "img" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWYxmkkE4gtO5DPEYT2FN23omgTJHgdLmXig&usqp=CAU",
+            "product_name" : "Shirt",
+            "price" : 1999 
+        },
+        {
+            "img" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRH0HU2h_uh25V6eoQ8NsijgDf5JtWmuQDPpg&usqp=CAU",
+            "product_name" : "Jeans",
+            "price" : 2999
+        },
+        {
+            "img" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLhMrYvF-YJsE4-pHudgcuJv268NpOPIK9IA&usqp=CAU",
+            "product_name" : "Suit",
+            "price" : 999
+        },
+        {
+            "img" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7xTnFy0VFwwjB18IMOwRNPpH2c3K2jhVfxw&usqp=CAU",
+            "product_name" : "Shoes",
+            "price" : 3999
+        },
+        {
+            "img" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6Q5e7JCNSLpRXmv5j71oTSOR9rSBzWVtniA&usqp=CAU",
+            "product_name" : "Jacket",
+            "price" : 4999
+        }
+    ]
+}

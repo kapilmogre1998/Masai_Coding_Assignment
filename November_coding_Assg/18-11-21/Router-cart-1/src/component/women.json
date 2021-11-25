@@ -1,0 +1,30 @@
+{
+    "women" : [
+        {
+            "img" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSr4WLpwI1xNd-b6x_WDk7WoS-XTmRb2wEq-w&usqp=CAU",
+            "product_name" : "Kurta",
+            "price" : 1999 
+        },
+        {
+            "img" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsp8vq_8zX0tiCA48YfWJ8jjj3w18g-cnXxw&usqp=CAU",
+            "product_name" : "T-shirt",
+            "price" : 2999 
+        },
+        {
+            "img" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmBmrbNtcoZEdQ8io_5fIWV5adOCliD3iuPw&usqp=CAU",
+            "product_name" : "Jeans",
+            "price" : 999 
+        },
+        {
+            "img" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNnL38It-swhFaU85s6JW3bnRXSkU6adZgrw&usqp=CAU",
+            "product_name" : "Jacket",
+            "price" : 4999 
+        },
+        {
+            "img" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnwa6rEPTo2-jarVL4x-tNsQC4Um6PGZJm2g&usqp=CAU",
+            "product_name" : "Rare Rabbit",
+            "price" : 3999 
+        }
+        
+    ]
+}
