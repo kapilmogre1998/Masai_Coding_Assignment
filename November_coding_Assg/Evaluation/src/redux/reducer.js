@@ -15,7 +15,7 @@ export const reducerAuth = (state = initState, {type,payload})=>{
             return({
                 ...state,
                 isAuth:true,
-                token:"kapil"
+                token: payload
             })
 
         case LOGIN_FAIL:

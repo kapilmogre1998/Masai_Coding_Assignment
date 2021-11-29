@@ -1,0 +1,22 @@
+{
+    "movies":[
+        {
+            "id": 1,
+            "movie_name" : "Jai Bhim",
+            "details" : "When a tribal man is arrested for a case of alleged theft, his wife turns to a human-rights lawyer to help bring justice.",
+            "poster_url" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQun-abBYjo8e4jjbtZhxijSZ2ywpmIy0EArg&usqp=CAU"
+        },
+        {
+            "id": 2,
+            "movie_name" : "sooryavanshi",
+            "details" : "Sooryavanshi traces the acts and serious antics of DCP Veer Sooryavanshi, the chief of the Anti-Terrorism Squad in India.",
+            "poster_url" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRD-VpZNGblkmQU6hpuYkV-Sbta91xrLOn52A&usqp=CAU"
+        },
+        {
+            "id": 3,
+            "movie_name" : "Antim",
+            "details" : "The cop played by Salman fights the land mafia in the film.",
+            "poster_url" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJxqstHNVdtiMRwsIGoBdbN-gzNMsvuX_mDg&usqp=CAU"
+        }
+    ]
+}
