@@ -1,0 +1,13 @@
+.main-container{
+    border: 0px;
+}
+.main-container input[type="text"]{
+    padding: 6px 12px;
+    width: 50%;
+    border-radius: 2px;
+    
+}
+.main-container input[type="submit"]{
+    padding: 6px 12px;
+    border-radius: 2px
+}
