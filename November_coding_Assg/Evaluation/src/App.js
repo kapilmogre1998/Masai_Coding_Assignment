@@ -1,27 +1,29 @@
 import logo from './logo.svg';
 import './App.css';
-import { Button } from './component/Button';
+import {BrowserRouter as Router,Switch,Route, Link} from "react-router-dom";
+import { Form } from './component/Form';
+import { Dashboard } from './component/Dashboard';
+import { Navbar } from './component/Navbar';
+import { About } from './component/About';
+
 
 function App() {
   return (
-    <>
-      <div >
-        <Button name="JOIN US" bkg="#00a0b2" />
-        <Button name="SETTINGS" bkg="#bdbdbd" />
-      </div>
-      <div >
-        <Button name="LOGIN" bkg="#fb8c00"/>
-        <Button name="CONTACT US" bkg="#f44336"/>
-      </div>
-      <div >
-        <Button name="SEARCH" bkg="#8bc34a" />
-        <Button name="HELP" bkg="#283593"/>
-      </div>
-      <div >
-        <Button name="HOME" bkg="#e91e63" />
-        <Button name="DOWNLOAD" bkg="#9e9d24" />
-      </div>
-    </>
+    <div className="App">
+     {/* <Form/> */}
+     <Navbar/>
+     <Switch>
+       <Route exact path="/">
+         <Form/>
+       </Route>
+       <Route path="/about"> 
+         <About/>
+       </Route>
+       <Route path="/dashboard">
+         <Dashboard/>
+       </Route>
+     </Switch>
+    </div>
   );
 }
 
