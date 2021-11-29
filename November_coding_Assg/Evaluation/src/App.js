@@ -6,6 +6,7 @@ import { Dashboard } from './component/Dashboard';
 import { Navbar } from './component/Navbar';
 import { About } from './component/About';
 import { PrvteRoute } from './auth/PrivateRoute';
+import { MovieDetails } from './component/MovieDetails';
 
 
 function App() {
@@ -19,8 +20,11 @@ function App() {
         <Route exact path="/login">
           <Form />
         </Route>
-        <Route>
+        <Route exact path="/about">
           <About />
+        </Route>
+        <Route exact path="/movie-details">
+          <MovieDetails/>
         </Route>
       </Switch>
     </div>
