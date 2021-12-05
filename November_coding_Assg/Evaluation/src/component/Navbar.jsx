@@ -1,8 +1,13 @@
+import { useSelector } from "react-redux"
 import { Link } from "react-router-dom"
 import './style/navbar.css'
 
 export const Navbar = () => {
+    const {message} = useSelector(store => store)
+
     return (
+        <>
+        <div className="display-messg">{message}</div>
         <div className="navbar">
             <Link to="/" style={{margin:"10px"}}>
                Dashboard
@@ -14,5 +19,8 @@ export const Navbar = () => {
                Login
             </Link>
         </div>
+        </>
     )
 }
+
+

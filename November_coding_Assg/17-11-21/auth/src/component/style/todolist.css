@@ -1,0 +1,46 @@
+.todolist-container{
+    margin-top: 50px;
+}
+
+.todolist-box{
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid red;
+    width: 686px;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px 0px;
+    box-shadow: 3px 3px 5px black;
+    font-size: 20px;
+}
+
+.todolist-box>strong{
+    text-align: start;
+}
+
+.todolist-box button{
+    background-color: rgb(51, 189, 51);
+    border: 0px;
+    margin-right: 10px;
+    border-radius: 3px;
+}
+
+.todolist-box button:nth-child(1):hover{
+    background-color: rgb(6, 146, 6);;
+}
+
+.todolist-box button:nth-child(2){
+    background-color: red;
+}
+
+.todolist-box button:nth-child(2):hover{
+    background-color: rgb(185, 8, 8);
+}
+
+.todolist-box button:nth-child(3){
+    background-color: lightskyblue;
+}
+
+.todolist-box button:nth-child(3):hover{
+    background-color: rgb(70, 142, 187);
+}

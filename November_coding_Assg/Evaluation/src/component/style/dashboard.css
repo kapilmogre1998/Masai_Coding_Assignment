@@ -1,0 +1,10 @@
+.dashboard-main-container{
+    display: flex;
+    justify-content: center;
+    margin: 40px auto;
+}
+
+.dashboard-main-container img{
+    width: 200px;
+    height: 200px;
+}

@@ -1,0 +1,16 @@
+.slot-main-container{
+    width: 40%;
+    margin: 100px auto;
+}
+
+.slot-main-container h2{
+    margin-bottom: 40px;
+}
+
+.time-container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    justify-content:space-around;
+    row-gap: 20px;
+}
+ 

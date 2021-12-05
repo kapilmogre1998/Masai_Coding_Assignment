@@ -1,0 +1,17 @@
+body{
+    background-color: antiquewhite;
+}
+.move-details-contianer{
+    margin-top: 150px;
+    display: grid;
+    grid-template-columns: 40% 50%;
+}
+
+.movie-description{
+    text-align: start;
+    font-size: large;
+}
+
+.movie-description div:nth-child(1){
+    line-height: 70px;
+}

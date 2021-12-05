@@ -1,0 +1,11 @@
+.navbar-container{
+    background-color: rgb(69, 228, 167);
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 30px;
+}
+
+.navbar-container>div:nth-child(2),:nth-child(3){
+    margin-top: 13px;
+    font-weight: bold;
+}

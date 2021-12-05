@@ -4,7 +4,6 @@ import { Dashboard } from "../component/Dashboard";
 
 export const PrvteRoute = ({path,children}) => {
     let {token} = useSelector(store => store)
-    console.log(token)
 
     if(!token){
         return <Redirect to="/login" />
@@ -12,7 +11,7 @@ export const PrvteRoute = ({path,children}) => {
 
     return (
         <Route exact path={path} >
-            <Dashboard/>
+            {children}
         </Route>
     )
 }
