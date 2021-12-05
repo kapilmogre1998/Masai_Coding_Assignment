@@ -1,19 +1,14 @@
-/* button{
-  background-color: aqua;
-  border: 1px solid black;
-  margin: 5px;
-  padding: 5px;
-} */
-
-
-
-.App {
-  text-align: center;
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;  
 }
 
-#heading{
-  color: rgb(22, 16, 22);
-  margin: 0px;
+body{
+  background-color: rgba(246, 247, 203, 0.589)
+}
+.App {
+  text-align: center;
 }
 
 .App-logo {

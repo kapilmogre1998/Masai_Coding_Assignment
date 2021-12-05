@@ -1,9 +1,12 @@
-import { createStore,combineReducers } from "redux"
-import { isAuth } from "./login/reducer"
-import { todoList } from "./todo/reducer"
+import { createStore } from 'redux'
+import loginReducer from './login/reducer';
+import { todoReducer } from './todo/reducer'
+import { combineReducers } from 'redux';
 
-const rootReducer =  combineReducers({
-    auth: isAuth,
-    todos : todoList
+const rootReducer =combineReducers({
+    todo: todoReducer,
+    login: loginReducer
 })
-export const store = createStore(rootReducer,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+
+export const store = createStore(rootReducer);
+

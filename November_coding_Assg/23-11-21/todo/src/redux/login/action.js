@@ -1,9 +1,14 @@
-import { LOGIN_FAILURE, LOGIN_SUCCESS } from "./actionTypes"
+import { LOGIN_FAIL, LOGIN_SUCCESS, LOGOUT } from "./actionTypes"
 
-export const loginSuccess = (token)=>{
-    return ({type:LOGIN_SUCCESS,payload:token})
+
+export const loginSuccess = (payload)=>{
+    return ({type : LOGIN_SUCCESS,payload})
 }
 
-export const loginFailure = (payload)=>{
-    return ({type:LOGIN_FAILURE,payload})
+export const loginFail = ()=>{
+    return ({type : LOGIN_FAIL,payload})
+}
+
+export const logout = ()=>{
+    return ({type:LOGOUT})
 }

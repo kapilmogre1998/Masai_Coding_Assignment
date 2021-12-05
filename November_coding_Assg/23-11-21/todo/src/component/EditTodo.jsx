@@ -1,31 +1,38 @@
-import { useState } from "react"
-import { useDispatch,useSelector } from "react-redux"
-import { useLocation,useHistory } from "react-router-dom";
-import { editTodo } from "../redux/todo/action";
-
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { useHistory, useLocation } from "react-router"
+import { edittodo } from "../redux/todo/action";
+import './style/editTodo.css'
 
 export const EditTodo = () => {
-    const location = useLocation();
-    const history = useHistory();
-    const {state : {todoid}} = location;
-
+    const {state:id} = useLocation();
     const dispatch = useDispatch();
-    const [editText,setEditText] = useState("")
+    const history = useHistory();
+    const [editText,setEditText] = useState();
+    
 
-    const handleTodoEdited = ()=>{
-        dispatch(editTodo({todoid,editText}))
-        history.push("/");
+    const handleEditTodo = ()=>{
+        if(editText !== undefined){
+            const action = edittodo({id,title:editText});
+            dispatch(action);
+            console.log("edittext")
+            history.push("/");
+        }
+        else
+        return alert("Please Enter Todo")
+    }
+
+    const handleBackBtn = ()=>{
+        history.push("/")
     }
 
     return (
-        <>
-        <div>
-            <textarea name="edit" value={editText}  cols="50" rows="10" placeholder="Edit Todo List" onChange={(e)=> setEditText(e.target.value)}>
+        <div className="edit-todo-container">
+            <textarea onChange={(e)=> setEditText(e.target.value)} style={{background:"initial"}} placeholder="Enter todo">
             </textarea>
+            <br />
+            <button onClick={handleBackBtn}>Back</button>
+            <button onClick={handleEditTodo}><strong>Done</strong></button>
         </div>
-        <div onClick={handleTodoEdited}>
-            <input type="submit" value="Done" />
-        </div>
-        </>
     )
 }

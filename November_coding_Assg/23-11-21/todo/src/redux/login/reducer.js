@@ -1,31 +1,37 @@
-import { loadData, saveData } from "../../utils/localStorage"
-import { LOGIN_FAILURE, LOGIN_SUCCESS } from "./actionTypes"
+import { loadData, saveData } from "../../utils/localStorage";
+import { LOGIN_FAIL, LOGIN_SUCCESS, LOGOUT } from "./actionTypes";
 
-//loadData : passing key
-let token = loadData("token")
+const data = loadData("todoapptoken");
 
-//if token empty:false, either true
 const initState = {
-    isAuth : token ? true : false,
-    token : token || ""
+    isAuth : data ? true : false,
+    token : data || ""
 }
 
-export const isAuth = (state = initState,{type,payload})=>{
+const loginReducer  = (state = initState,{type,payload})=>{
+
     switch(type){
         case LOGIN_SUCCESS:
-            saveData("token",payload)
-            return ({
-                ...state,
-                isAuth: true,
-                token:"payload"
-            })
-        case LOGIN_FAILURE:
-            return ({
-                ...state,
-                isAuth: false,
-                token:""
-            })
+            saveData("todoapptoken",payload)
+            return {
+                isAuth:true,
+                token: payload
+            }
+        case LOGIN_FAIL:
+            return {
+                isAuth : false,
+                token: ""
+            }
+        case LOGOUT: 
+        //it remove todoapptoken from locatstorage 
+        window.localStorage.removeItem("todoapptoken")
+            return {
+                isAuth : false,
+                token: ""
+            }
         default:
-            return (state)
+            return state
     }
 }
+
+export default loginReducer;

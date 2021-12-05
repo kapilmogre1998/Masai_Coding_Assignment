@@ -1,73 +1,66 @@
-import { ADD_TODO, ADD_TODO_ERROR, ADD_TODO_LOADING, ADD_TODO_SUCCESS, DEL_TODO, EDIT_TODO, TOGGLE_TODO } from "./actionTypes"
-
+import { ADD_TODO, DEL_TODO, EDIT_TODO, ERROR, LOADING, SUCCESS, TOGGLE_TODO } from "./actionTypes";
 
 const initState = {
-    todos: []
+    loading : true,
+    data : [],
+    error : false
 }
 
-// If state is empty it will take initState otherwise it will not take
-export const todoList = (state = initState, { type, payload }) => {
-    // console.log(payload)
-    switch (type) {
+export const todoReducer = (state = initState, {type,payload})=>{
+console.log(payload)
+    switch(type){
         case ADD_TODO:
             return {
                 ...state,
-                todos: [...state.todos, payload]
-            };
+                data: [...state.data,payload]
+            }
+
         case DEL_TODO:
             return {
                 ...state,
-                todos: state.todos.filter(data => data.id !== payload)
-            };
-        case TOGGLE_TODO:
-            return {
-                ...state,
-                todos: state.todos.map(elem => {
-                    if (elem.id === payload) {
-                        elem.status = !elem.status
-                        console.log(elem)
-                        return elem
-                    }
-                    return elem
-                })
-            };
+                data : state.data.filter(elem => elem.id != payload)
+            }
+
         case EDIT_TODO:
             return {
                 ...state,
-                todos: state.todos.map(elem => {
-                    if (elem.id === payload.todoid) {
-                        elem.title = payload.editText
-                        console.log(elem)
-                        return elem;
+                data : state.data.map(elem =>{
+                    if(elem.id === payload.id){
+                        elem.title = payload.title;
+                        elem.status = false
                     }
-                    return elem;
+
+                    return elem
                 })
-            };
-        // case ADD_TODO_LOADING:
-        //     return {
-        //         ...state,
-        //         todos: {
-        //             ...state.todos,
-        //            loading: true
-        //         }
+            }
+
+        case TOGGLE_TODO:
+            return {
+                ...state,
+                data : state.data.map(e =>{
+                    if(e.id === payload){
+                        e.status = !e.status
+                        return e;
+                    }
+                    return e;
+                })
+            }
+
+        // case LOADING:
+        //     return{
+
         //     }
-        // case ADD_TODO_SUCCESS : 
-        //     return {
-        //         ...state.todos,
-        //         todos: {
-        //             ...state.todos,
-        //            data : [...state.todos.data,payload]
-        //         }
+
+        // case ERROR:
+        //     return{
+
         //     }
-        // case ADD_TODO_ERROR:
-        //     return {
-        //         ...state.todos,
-        //         todos : {
-        //             ...state.todos,
-        //             error : true
-        //         }
+
+        // case SUCCESS:
+        //     return{
+
         //     }
         default:
-            return state;
+            return (state)
     }
-};
+}
