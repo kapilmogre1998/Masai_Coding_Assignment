@@ -1,0 +1,18 @@
+{
+  "formdata": [
+    {
+      "firstName": "Kapil",
+      "lastName": "Mogre",
+      "dob": "2021-12-02",
+      "gender": "male",
+      "id": 1
+    },
+    {
+      "firstName": "Karan",
+      "lastName": "Mogre",
+      "dob": "2021-12-02",
+      "gender": "male",
+      "id": 2
+    }
+  ]
+}
