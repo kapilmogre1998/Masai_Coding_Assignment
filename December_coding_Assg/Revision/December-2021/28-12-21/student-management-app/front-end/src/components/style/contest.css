@@ -1,0 +1,63 @@
+.table-container{
+    margin: 40px 0px;
+}
+.contest-container-table{
+    width: 92%;
+    margin: auto;
+}
+.contest-filter-section{
+    margin: 30px 0px;
+    display: flex;
+    padding: 0px 30px;
+}
+.contest-filter-section>p{
+    background-color: cadetblue;
+}
+.contest-filter-type>select{
+    width: 15vw;
+    padding: 4px 8px;
+    margin: 5px 0px;
+    margin-right: 50px;
+}
+.contest-container-table>thead{
+    background-color:goldenrod;
+}
+.contest-container-table td,th{
+    border-style: solid;
+    text-align: left;
+    padding: 10px;
+    border-width: 1px;
+    border-color: white;
+}
+.contest-container-table>tbody{
+    background-color:  tan;
+}
+.other-contest{
+    text-align: center;
+    margin-top: 30px;
+}
+.other-contest>button{
+    background-color: steelblue;
+    color: white;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    padding: 10px 10px ;
+    border: 0px;
+}
+.other-contest>button:hover{
+    background-color: rgb(6, 102, 180);
+}
+
+.arrow-btn{
+    background-color: white;
+}
+
+.add-student{
+   cursor: pointer;
+   margin-left: 4.18vw;
+   padding: 6px 8px;
+   background-color: coral;
+}
+.add-student:hover{
+    background-color: rgb(226, 133, 99);
+}

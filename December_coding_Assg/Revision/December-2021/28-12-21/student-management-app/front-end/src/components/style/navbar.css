@@ -1,0 +1,20 @@
+.navbar-section{
+    background-color: black;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    padding-left: 60px;
+}
+.navbar-section>div>*{
+    color: white;
+    margin-right: 70px;
+    text-decoration: none;
+}
+.navbar-section>div>*:hover{
+    color: rgb(189, 184, 184);
+}
+.navbar-login-btn *{
+    color: white;
+    text-decoration: none
+}

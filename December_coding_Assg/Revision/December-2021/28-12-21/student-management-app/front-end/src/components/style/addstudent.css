@@ -1,0 +1,38 @@
+.add-student-container{
+    width: 30%;
+    margin: 30px auto;
+    /* border: 1px solid #1266F1; */
+    padding: 10px;
+}
+.add-student-container>.title{
+    background-color: #0c47a5ea;
+    color: white;
+    padding: 15px 15px;
+    /* text-align: center; */
+}
+.add-student-container input{
+    width: 100%;
+    padding: 8px 10px;
+}
+.add-student-container p{
+    margin: 10px 0px 5px 0px;
+}
+.add-student-btn {
+    margin-top:10px ;
+}
+.add-student-btn>button{
+    padding: 6px 8px;
+    background-color: #0c47a5ea;
+    border: 0px;
+    color: white;
+    margin-right: 20px;
+}
+.add-student-btn>button:hover{
+    background-color: #2356a8ea;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

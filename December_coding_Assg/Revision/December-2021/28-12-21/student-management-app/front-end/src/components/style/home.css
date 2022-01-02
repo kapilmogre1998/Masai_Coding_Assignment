@@ -1,0 +1,10 @@
+/* body{
+    
+} */
+/* .home-container{
+    overflow-y: hidden;
+} */
+.home-container>img{
+    width: 100%;
+    /* overflow-y: hidden; */
+}
