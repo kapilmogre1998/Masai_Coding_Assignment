@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://star-wars-searchbar.vercel.app/emipire.png" type="image/x-icon">
+    <title>Star Wars</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div id="container">
+        <img src="./image/Star_Wars_Logo.svg.png" alt="">
+        <div id="inp"><input type="text" autocomplete="off" id="star" placeholder="Search characters"
+                oninput="throttling(main,800)" />
+            <div style="display: inline-block;margin-top: 8px;">
+                <button id="search-btn">
+                    <img src="./image/search-icon.png" width="16" alt="">
+                </button>
+            </div>
+        </div>
+        <hr id="hr">
+        </hr>
+        <div id="search-notfound">
+            No results found.Try again...
+        </div>
+
+        <div id="data">
+        </div>
+    </div>
+
+    <div id="showdata" style="display:none">
+        <h1 id="head"></h1>
+        <div>
+            <div class="showinfo" id="personal"></div>
+            <div class="showinfo" id="anatomy"></div>
+        </div>
+        <div> <button id="btn">Go Back</button></div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
